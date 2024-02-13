@@ -46,6 +46,7 @@ class _BerandaPageState extends State<BerandaPage> {
               Text(
                 "EDU HSI",
                 style: TextStyle(
+                  fontFamily: 'Plus Jakarta Sans',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),

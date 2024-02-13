@@ -1,7 +1,24 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class BerandaPage extends StatelessWidget {
+class BerandaPage extends StatefulWidget {
   static const nameRoute = './berandapage';
+
+  @override
+  State<BerandaPage> createState() => _BerandaPageState();
+}
+
+class _BerandaPageState extends State<BerandaPage> {
+  final List mySliderItems = [
+    Image.asset("assets/images/slide-1.png"),
+    Image.asset("assets/images/slide-2.png"),
+    Image.asset("assets/images/slide-3.png"),
+    Image.asset("assets/images/slide-4.png"),
+    Image.asset("assets/images/slide-5.png"),
+  ];
+
+  int myCurrentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +66,9 @@ class BerandaPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Text("Assalamu'alaykum,"),
                 Text(
                   "SIGIT NUGROHO PUTRA",
@@ -58,8 +77,62 @@ class BerandaPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 5,),
+                SizedBox(
+                  height: 5,
+                ),
                 Text("ARN241-40181"),
+                SizedBox(
+                  height: 5,
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CarouselSlider(
+                        items: mySliderItems.map((i) {
+                          return Builder(
+                            builder: (BuildContext) {
+                              return Container(
+                                width: MediaQuery.of(context).size.width,
+                                margin: EdgeInsets.all(5),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: i,
+                                ),
+                              );
+                            },
+                          );
+                        }).toList(),
+                        options: CarouselOptions(
+
+                          height: 200,
+                          autoPlay: true,
+                          enableInfiniteScroll: false,
+                          enlargeCenterPage: false,
+                          scrollDirection: Axis.horizontal,
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                          autoPlayInterval: const Duration(seconds: 2),
+                          aspectRatio: 2.0,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              myCurrentIndex = index;
+                            });
+                          },
+                        ),
+                      ),
+                      AnimatedSmoothIndicator(
+                        activeIndex: myCurrentIndex,
+                        count: mySliderItems.length,
+                        effect: const WormEffect(
+                          dotHeight: 10,
+                          dotWidth: 10,
+                          spacing: 5,
+                        ),
+
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

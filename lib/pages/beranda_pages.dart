@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -10,7 +12,6 @@ class BerandaPage extends StatefulWidget {
 }
 
 class _BerandaPageState extends State<BerandaPage> {
-
   final List mySliderItems = [
     Image.asset("assets/images/slide-1.png"),
     Image.asset("assets/images/slide-2.png"),
@@ -76,12 +77,12 @@ class _BerandaPageState extends State<BerandaPage> {
                 Text(
                   "SIGIT NUGROHO PUTRA",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 2,
                 ),
                 Text("ARN241-40181"),
                 SizedBox(
@@ -126,7 +127,9 @@ class _BerandaPageState extends State<BerandaPage> {
                     },
                   ),
                 ),
-                SizedBox(height: 15,),
+                SizedBox(
+                  height: 15,
+                ),
                 AnimatedSmoothIndicator(
                   activeIndex: myCurrentIndex,
                   count: mySliderItems.length,
@@ -136,6 +139,111 @@ class _BerandaPageState extends State<BerandaPage> {
                     spacing: 5,
                     dotColor: Colors.grey,
                     activeDotColor: Color(0xFF043164),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 13),
+            child: Text(
+              "Info Pendaftaran",
+              style: TextStyle(
+                fontFamily: 'Plus Jakarta Sans',
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            margin: EdgeInsets.all(13),
+            height: MediaQuery.of(context).size.width * 0.58,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 1,
+                color: Colors.grey.shade300,
+              ),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(13),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.width * 0.13,
+                  decoration: BoxDecoration(
+                      color: Colors.blue.shade50,
+                      border: Border.all(
+                        width: 0,
+                        color: Colors.blue.shade100,
+                      ),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    children: [
+                      Align(
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          // alignment: Alignment.center,
+                          // height: 10,
+                          // width: 10,
+                          child: Icon(
+                            Icons.info,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Pendaftaran Program Hifzhul Mutun\nAngkatan Ke-03",
+                        style: TextStyle(
+                          fontFamily: 'Plus Jakarta Sans',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                          letterSpacing: .1,
+                          color: Color(0xFF043164),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.only(left: 13),
+                  child: Text(
+                    "Bismillah\nPendaftaran Hifzhul Mutun HSI AbdullahRoy\nAngkatan Ke-3 telah dibuka",
+                    style: TextStyle(
+                      fontFamily: 'Plus Jakarta Sans',
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(13),
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Selengkapnya",
+                      style: TextStyle(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 15, 66, 232),
+                      padding: EdgeInsets.all(0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
                   ),
                 ),
               ],

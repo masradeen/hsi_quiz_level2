@@ -34,7 +34,6 @@ class _BerandaPageState extends State<BerandaPage> {
 
   @override
   Widget build(BuildContext context) {
-
     final _listPage = <Widget>[
       const Text("Beranda"),
       const Text("Akademi"),
@@ -227,10 +226,6 @@ class _BerandaPageState extends State<BerandaPage> {
                   height: MediaQuery.of(context).size.width * 0.13,
                   decoration: BoxDecoration(
                       color: Colors.blue.shade50,
-                      border: Border.all(
-                        width: 0,
-                        color: Colors.blue.shade100,
-                      ),
                       borderRadius: BorderRadius.circular(8)),
                   child: Row(
                     children: [
@@ -286,6 +281,197 @@ class _BerandaPageState extends State<BerandaPage> {
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 15, 66, 232),
+                      padding: EdgeInsets.all(0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 13),
+            child: Text(
+              "Evaluasi",
+              style: TextStyle(
+                fontFamily: 'Plus Jakarta Sans',
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            margin: EdgeInsets.all(13),
+            height: MediaQuery.of(context).size.width * 0.62,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 1,
+                color: Colors.grey.shade300,
+              ),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(13),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 32,
+                        width: 90,
+                        decoration: BoxDecoration(
+                          color: Colors.blue.shade50,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Align(
+                          child: Text(
+                            "Majalah HSI",
+                            style: TextStyle(
+                              fontFamily: 'Plus Jakarta Sans',
+                              fontSize: 14,
+                              color: Color(0xFF043164),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Aktif",
+                        style: TextStyle(
+                          fontFamily: 'Plus Jakarta Sans',
+                          fontSize: 14,
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional.topStart,
+                  child: Container(
+                    margin: EdgeInsets.only(left: 13),
+                    child: Text(
+                      "Kuis Majalah HSI Edisi 58",
+                      style: TextStyle(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontSize: 17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional.topStart,
+                  child: Container(
+                    margin: EdgeInsets.only(left: 13),
+                    child: Text(
+                      "MAJALAH 1444H",
+                      style: TextStyle(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(13),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 32,
+                        width: 85,
+                        decoration: BoxDecoration(
+                          color: Colors.blue.shade50,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.menu,
+                              size: 22,
+                              color: Color(0xFF043164),
+                            ),
+                            Text(
+                              "10 soal",
+                              style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 14,
+                                color: Color(0xFF043164),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10,),
+                      Container(
+                        height: 32,
+                        width: 211,
+                        decoration: BoxDecoration(
+                          color: Colors.blue.shade50,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.timer_off_outlined,
+                              size: 22,
+                              color: Color(0xFF043164),
+                            ),
+                            Text(
+                              "Rabu, 21 Feb 2024 ",
+                              style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 14,
+                                color: Color(0xFF043164),
+                              ),
+                            ),
+                            Icon(
+                              Icons.circle,
+                              size: 6,
+                              color: Color(0xFF043164),
+                            ),
+                            Text(
+                              " 13.00",
+                              style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 14,
+                                color: Color(0xFF043164),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: 13,
+                    right: 13,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Kerjakan",
+                      style: TextStyle(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
                       padding: EdgeInsets.all(0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),

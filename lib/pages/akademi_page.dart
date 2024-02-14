@@ -7,7 +7,7 @@ class AkademiPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          "Halaman Ini Belum Tersedia"
+          "Halaman Akademi Belum Tersedia"
         ),
       ),
     );

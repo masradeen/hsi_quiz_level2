@@ -28,15 +28,7 @@ class _BerandaPageState extends State<BerandaPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final _listPage = <Widget>[
-    //   const Text("Beranda"),
-    //   const Text("Akademi"),
-    //   const Text("Reguler"),
-    //   const Text("Profil"),
-    // ];
-
     
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -67,8 +59,10 @@ class _BerandaPageState extends State<BerandaPage> {
               Text(
                 "v.2401-2001",
                 style: TextStyle(
+                  fontFamily: 'Plus Jakarta Sans',
                   fontSize: 13,
                   color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],

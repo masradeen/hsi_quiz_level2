@@ -7,7 +7,7 @@ class RegulerPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          "Halaman Ini Belum Tersedia"
+          "Halaman Reguler Belum Tersedia"
         ),
       ),
     );

@@ -66,11 +66,17 @@ class _MyAppState extends State<MyApp> {
                 label: "Akademi",
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.edit_document),
+                icon: ImageIcon(
+                  AssetImage("assets/icons/document.png"),
+                  size: 20,
+                ),
                 label: "Reguler",
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: ImageIcon(
+                  AssetImage("assets/icons/user.png"),
+                  size: 20,
+                ),
                 label: "Profil",
               ),
             ],

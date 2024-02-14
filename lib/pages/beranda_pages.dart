@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BerandaPage extends StatefulWidget {
@@ -23,8 +24,54 @@ class _BerandaPageState extends State<BerandaPage> {
   int myCurrentIndex = 0;
   int selectedIndex = 0;
 
+  int _selectedNavIndex = 0;
+
+  void _onNavBarTapped(int index) {
+    setState(() {
+      _selectedNavIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    final _listPage = <Widget>[
+      const Text("Beranda"),
+      const Text("Akademi"),
+      const Text("Reguler"),
+      const Text("Profil"),
+    ];
+
+    final _bottomNavBarItems = <BottomNavigationBarItem>[
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        label: "Beranda",
+      ),
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.school),
+        label: "Akademi",
+      ),
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.edit_document),
+        label: "Reguler",
+      ),
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.person),
+        label: "Profil",
+      ),
+    ];
+
+    final _bottomNavBar = BottomNavigationBar(
+      // backgroundColor: Colors.white70,
+      type: BottomNavigationBarType.fixed,
+      // backgroundColor: Colors.amber,
+      items: _bottomNavBarItems,
+      currentIndex: _selectedNavIndex,
+      unselectedItemColor: Colors.grey.shade600,
+      selectedItemColor: Color(0xFF043164),
+      onTap: _onNavBarTapped,
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -250,6 +297,15 @@ class _BerandaPageState extends State<BerandaPage> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 1,
+            color: Colors.grey.shade300,
+          ),
+        ),
+        child: _bottomNavBar,
       ),
     );
   }

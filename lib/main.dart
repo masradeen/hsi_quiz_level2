@@ -58,7 +58,10 @@ class _MyAppState extends State<MyApp> {
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: ImageIcon(
+                  AssetImage("assets/icons/home.png"),
+                  size: 20,
+                ),
                 label: "Beranda",
               ),
               BottomNavigationBarItem(
